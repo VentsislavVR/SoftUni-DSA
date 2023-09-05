@@ -1,7 +1,6 @@
-
-#TODO try with custom inputs and labyrinths
-def find_all_path(row, col, lab,directions,path):
-    if row < 0 or col < 0 or row >=len(lab) or col >= len(lab[0]):
+# TODO try with custom inputs and labyrinths
+def find_all_path(row, col, lab, directions, path):
+    if row < 0 or col < 0 or row >= len(lab) or col >= len(lab[0]):
         return
 
     if lab[row][col] == '*':
@@ -14,14 +13,12 @@ def find_all_path(row, col, lab,directions,path):
     else:
         lab[row][col] = 'v'
 
-
-        find_all_path(row - 1, col, lab,'U',path)
-        find_all_path(row + 1, col, lab,'D',path)
-        find_all_path(row, col - 1, lab,'L',path)
-        find_all_path(row, col + 1, lab,'R',path)
+        find_all_path(row - 1, col, lab, 'U', path)
+        find_all_path(row + 1, col, lab, 'D', path)
+        find_all_path(row, col - 1, lab, 'L', path)
+        find_all_path(row, col + 1, lab, 'R', path)
         lab[row][col] = '-'
     path.pop()
-
 
 
 rows = int(input())
@@ -31,4 +28,4 @@ lab = []
 for _ in range(rows):
     lab.append(list(input()))
 
-find_all_path(0, 0, lab,'',[])
+find_all_path(0, 0, lab, '', [])

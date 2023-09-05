@@ -12,5 +12,5 @@ def iterative_fib(num):
         res = fib0 + fib1
         fib0,fib1 = fib1,res
     return res
-
-print(iterative_fib(100))
+n=int(input())
+print(iterative_fib(n))
