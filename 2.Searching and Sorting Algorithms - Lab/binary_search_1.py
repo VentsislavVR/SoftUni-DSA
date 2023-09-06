@@ -4,6 +4,7 @@
 def binary_search(nums, target):
     left = 0
     right = len(nums) - 1
+    # RECUSION START
     while left <= right:
         mid_idx = (right + left) // 2
         mid_el = nums[mid_idx]
